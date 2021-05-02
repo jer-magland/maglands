@@ -27,7 +27,10 @@ const GoogleSignin: FunctionComponent<Props> = () => {
                                 <button onClick={handleSignOut}>Sign out</button>
                             </span>
                         ) : (
-                            <ReactGoogleButton onClick={handleSignIn} />
+                            <span>
+                                <button onClick={handleSignIn}>Sign in</button>
+                            </span>
+                            // <ReactGoogleButton onClick={handleSignIn} />
                         )
                     ) : gapi === undefined ? (
                         <div>Loading google api</div>
