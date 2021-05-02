@@ -14,23 +14,26 @@ const Home: FunctionComponent<Props> = () => {
     const location = useLocation()
     const history = useHistory()
 
-    if (!signedIn) return <span />
 
     return (
         <div>
             <GoogleSignin />
-            <div>
-                {
-                    (location.pathname === '/') && (
-                        <MainPage />
-                    )
-                }
-                {
-                    (location.pathname === '/groceries') && (
-                        <GroceriesPage />
-                    )
-                }
-            </div>
+            {
+                signedIn && (
+                    <div>
+                        {
+                            (location.pathname === '/') && (
+                                <MainPage />
+                            )
+                        }
+                        {
+                            (location.pathname === '/groceries') && (
+                                <GroceriesPage />
+                            )
+                        }
+                    </div>
+                )
+            }
         </div>
     )
 }
